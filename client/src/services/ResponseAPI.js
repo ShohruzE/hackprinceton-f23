@@ -22,6 +22,29 @@ const getResponse = async (value) => {
     }
 };
 
+const getHint = async (question) => {
+    try {
+        const options = {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                message: question
+            }),
+        }
+        const response = await fetch(BASE_URL + "/hint", options);
+        const data = await response.json();
+        console.log(data);
+        console.log(data.choices[0].message.content);
+        return data.choices[0].message.content;
+    }
+    catch (error) {
+        throw error;
+    }
+};
+
 export default {
-    getResponse
+    getResponse,
+    getHint
 }
