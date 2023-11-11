@@ -93,6 +93,10 @@ const Product = () => {
 
     const handleAnswer = (e) => {
       e.preventDefault();
+      if(!message){
+        alert("Please enter a message first!")
+        return;
+      }
       getAnswer();
     }
   
