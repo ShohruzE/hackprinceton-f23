@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 
 import promptsRouter from './routes/prompt.js';
 import hintRouter from './routes/hint.js';
+import answerRouter from './routes/answer.js';
 
 dotenv.config();
 
@@ -16,6 +17,7 @@ app.use(cors());
 
 app.use('/api', promptsRouter);
 app.use('/api', hintRouter);
+app.use('/api', answerRouter);
 
 app.get('/', (req, res) => {
     res.status(200).json({ message: 'Hello World!' });

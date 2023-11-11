@@ -12,6 +12,7 @@ const Product = () => {
     const [tries, setTries] = useState(3);
     const [hintMessage, setHintMessage] = useState(null);
     const [numHints, setHints] = useState(3);
+    const [answer, setAnswer] = useState("");
   
     /*
     useEffect(() => {
@@ -29,6 +30,17 @@ const Product = () => {
       }
       console.log(message);
       setValue("");
+    }
+
+    const getAnswer = async () => {
+      try {
+        const data = await ResponseAPI.getAnswer(message);
+        setAnswer(data);
+      }
+      catch (error) {
+        throw error;
+      }
+      console.log(answer);
     }
 
     const getHint = async() => {
@@ -71,8 +83,17 @@ const Product = () => {
 
     const handleHint = (e) => {
         e.preventDefault();
+        if(!message){
+          alert("Please enter a message first!")
+          return;
+        }
         setHints(numHints => numHints - 1);
         getHint();
+    }
+
+    const handleAnswer = (e) => {
+      e.preventDefault();
+      getAnswer();
     }
   
   /*   useEffect(() => {
@@ -114,6 +135,13 @@ const Product = () => {
                         </div>
                     </form>
                     <Card content={hintMessage} />
+                </div>
+
+                <div className="answer-box">
+                  <form onClick={handleAnswer}>
+                    <button id="answer" type="submit">Click here for answer</button>
+                  </form>
+                  <Card content={answer}/>
                 </div>
 
 
