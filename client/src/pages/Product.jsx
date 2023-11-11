@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import '../styles/index.css';
+import '../styles/Product.css';
 
 import ResponseAPI from '../services/ResponseAPI.js';
 import Card from '../components/Card';
@@ -50,6 +51,16 @@ const Product = () => {
         submit.disabled = false;
       }
     }, [tries])
+
+    useEffect(() => {
+        const submit = document.getElementById("hint");
+        if (numHints === 0) {
+          submit.disabled = true;
+        }
+        else {
+          submit.disabled = false;
+        }
+      }, [numHints])
   
     const handleSubmit = (e) => {
       e.preventDefault();
@@ -83,23 +94,30 @@ const Product = () => {
                 <h1>Product</h1>
             </div>
 
-            <div>
-                <form onClick={handleSubmit}>
-                    <input type="text" value={value} onChange={(e) => setValue(e.target.value)} />
-                    <div className="submit-container">
-                        <button id="submit" type="submit">Send</button>
-                        <p>{tries} free tries remaining</p>
-                    </div>
-                </form>
+            <div className="product-row">
+                <div className='question-box'>
+                    <form onClick={handleSubmit}>
+                        <input type="text" value={value} onChange={(e) => setValue(e.target.value)} />
+                        <div className="submit-container">
+                            <button id="submit" type="submit">Send</button>
+                            <p>{tries} free tries remaining</p>
+                        </div>
+                    </form>
+                    <Card content={message} />
+                </div>
 
-                <form onClick={handleHint}>
-                    <div className="submit-container">
-                        <button id="hint" type="submit">Hint</button>
-                        <p>{numHints} hints remaining</p>
-                    </div>
-                </form>
+                <div className='hint-box'>
+                    <form onClick={handleHint}>
+                        <div className="submit-container">
+                            <button id="hint" type="submit">Hint</button>
+                            <p>{numHints} hints remaining</p>
+                        </div>
+                    </form>
+                    <Card content={hintMessage} />
+                </div>
 
-                <Card content={message} />
+
+                
             </div>
 
         </div>

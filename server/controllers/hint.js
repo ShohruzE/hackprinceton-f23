@@ -29,9 +29,11 @@ const createHint = async (req, res) => {
         res.send(data);
         */
 
+        
+
         const completion = await openAI.chat.completions.create({
             messages: [
-                { role: 'system', content: 'The user will give a question that they need a hint to solve with. The subject could be anything from Algebra 2 to Quantum Computing. Generate a hint that is related to the subject. Do not format it, just give the hint.'},
+                { role: 'system', content: 'The user will give a question that they need a hint to solve with. The subject could be anything from Algebra 2 to Quantum Computing. Generate a hint that is related to the subject. Do not format it, just give the hint. Do not repeat the previous hint. The hints should be in succession from most general to most specific, giving more guidance each time.'},
                 { role: 'user', content: req.body.message }
             ],
             model: 'gpt-3.5-turbo',

@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(cors());
 
 app.use('/api', promptsRouter);
-app.use('/api/hint', hintRouter);
+app.use('/api', hintRouter);
 
 app.get('/', (req, res) => {
     res.status(200).json({ message: 'Hello World!' });
