@@ -1,7 +1,6 @@
 import React from 'react'
 import '../styles/index.css';
-
-import '../styles/Pricing.css'
+import '../styles/Pricing.css';
 
 const Pricing = () => {
   return (
@@ -23,7 +22,7 @@ const Pricing = () => {
                     <p>Free</p>
                 </div>
                 <div className='card-footer'>
-                    <button>Sign Up</button>
+                    <Link to='/product'>Purchase</Link>
                 </div>
             </div>
 
@@ -39,7 +38,7 @@ const Pricing = () => {
                     <p>Premium</p>
                 </div>
                 <div className='card-footer'>
-                    <button>Sign Up</button>
+                    <Link to='/product-premium'>Purchase</Link>
                 </div>
             </div>
         </div>
