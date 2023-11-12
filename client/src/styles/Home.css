@@ -11,13 +11,6 @@ h1 {
     text-align: left; 
 }
 
-.why-honeyDo{
-    text-align: center;
-}
-.why-container h3{
-    width: 75%;
-}
-
 .flex-container {
     display: flex;
     justify-content: center;
@@ -27,10 +20,22 @@ h1 {
 
 .about-container {
     display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 1rem;
+}
+
+.about-us-content {
+    border: 5px solid rgba(27,77,62, 0.5);
+    border-radius: 20px;
+    width: 40%;
+    padding: 4rem;
+
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10rem;
-    padding-top: 1rem;
+    gap: 2rem;
 }
 
 .hero-content h1 {
@@ -42,16 +47,12 @@ h1 {
 .about-us-text {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     gap: 1rem;
-    text-align: center;
 }
 
 .about-us-content h1{
     color: #355E3B;
-    padding-bottom: 4rem;
-    padding-top: 2rem;
 }
 
 .sub-heading{
@@ -61,17 +62,6 @@ h1 {
 .about-us-text ul{
     text-align: left;
     background-color: #D9FEE5,;
-}
-
-
-.why-container h1{
-    margin-bottom: 1rem;
-    text-align: center;
-    color: #355E3B
-}
-
-.why-container h3{
-    text-align: center;
 }
 
 .explore-honeydo-button {
@@ -104,13 +94,62 @@ img{
 }
 
 #backstory{
-    padding-bottom: 9rem;
-    padding-top: 9rem;
+    padding-bottom: 5rem;
+    padding-top: 5rem;
     border-bottom: 3px solid #1B4D3E;
     background: #CCFFCC;
 }
 
-#why-honeyDo{
-    padding-bottom: 6rem;
-    padding-top: 5rem;
+#why-honeyDo {
+    background-color: #f9f9f9;
+    padding: 8rem 0;
+  }
+  
+  .why-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .why-header h1 {
+    color: #333;
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+  
+  .why-content h3 {
+    color: #555;
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  .why-content a {
+    display: inline-block;
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+  
+  .why-content a:hover {
+    background-color: #2980b9;
+  }
+
+
+
+footer {
+    background-color: #D0F0C0;
+    color: #000;
+    padding: 2em;
+    border-top: 1px solid #21421E;
 }
+
+.footer-content {
+    text-align: center;
+    font-weight: bold;
+}
+

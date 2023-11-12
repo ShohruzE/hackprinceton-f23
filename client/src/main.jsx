@@ -6,6 +6,7 @@ import App from './App.jsx';
 import Navbar from './components/Navbar.jsx';
 import Home from './pages/Home.jsx';
 import Product from './pages/Product.jsx';
+import PremiumProduct from './pages/PremiumProduct.jsx';
 import Pricing from './pages/Pricing.jsx';
 
 
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: '/product',
         element: <Product />
+      },
+      {
+        path: '/product-premium',
+        element: <PremiumProduct />
       },
       {
         path: '/pricing',

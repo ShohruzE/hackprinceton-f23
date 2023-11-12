@@ -5,11 +5,12 @@ import '../styles/Product.css';
 import ResponseAPI from '../services/ResponseAPI.js';
 import Card from '../components/Card';
 
-const Product = () => {
+import '../styles/Product.css';
+
+const PremiumProduct = () => {
 
     const [value, setValue] = useState("");
     const [message, setMessage] = useState(null);
-    const [tries, setTries] = useState(5);
     const [hintMessage, setHintMessage] = useState(null);
     const [numHints, setHints] = useState(3);
     const [answer, setAnswer] = useState("");
@@ -53,16 +54,6 @@ const Product = () => {
         }
         console.log(hintMessage);
     }
-  
-    useEffect(() => {
-      const submit = document.getElementById("submit");
-      if (tries === 0) {
-        submit.disabled = true;
-      }
-      else {
-        submit.disabled = false;
-      }
-    }, [tries])
 
     useEffect(() => {
         const submit = document.getElementById("hint");
@@ -77,9 +68,6 @@ const Product = () => {
     const handleSubmit = (e) => {
       e.preventDefault();
       if (!value) return;
-      setTries(tries => tries - 1);
-      setHints(3);
-      setHintMessage(null);
       getMessages();
     }
 
@@ -128,9 +116,6 @@ const Product = () => {
                             <input type="text" value={value} onChange={(e) => setValue(e.target.value)} />
                             <button id="submit" type="submit">Send</button>
                         </div>
-                        <div className="tries-text">
-                            <p>{tries} free tries remaining</p>
-                        </div>
                     </form>
                     <Card content={message} />
                 </div>
@@ -146,12 +131,12 @@ const Product = () => {
                 </div>
 
                 <div className="answer-box">
-                  <form onClick={handleAnswer}>
+                <form onClick={handleAnswer}>
                     <div className="submit-container">
                         <button id="answer" type="submit">Click here for answer</button>
                     </div>
-                  </form>
-                  <Card content={answer}/>
+                </form>
+                <Card content={answer}/>
                 </div>
 
 
@@ -163,4 +148,4 @@ const Product = () => {
   )
 }
 
-export default Product
+export default PremiumProduct
