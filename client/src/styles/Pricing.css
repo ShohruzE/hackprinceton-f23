@@ -6,8 +6,8 @@
   width: 100%;
   max-width: 1200px;
   padding: 0 20px;
-
   gap: 0 2rem;
+  border-width: thick;
 }
 
 .pricing-card h1 {
@@ -36,6 +36,7 @@
   max-width: 300px;
   border: 1px solid #000;
   border-radius: 5px;
+  border-width: medium;
 }
 
 .pricing-cards .pricing-card .card-body {
@@ -44,4 +45,3 @@
     justify-content: center;
     align-items: center;
 }
-
